@@ -146,6 +146,31 @@ export function AppSidebar() {
             isCollapsed && 'px-2'
           )}
         >
+          {!isCollapsed && (
+            <div className="rounded-md border border-sidebar-border bg-white/70 p-3 space-y-2">
+              <div className="text-xs font-medium text-sidebar-foreground/70">
+                联系开发者
+              </div>
+              <div className="text-[11px] text-sidebar-foreground/60">微信</div>
+              <div className="flex items-center justify-center">
+                <Image
+                  src="/wechat-qr.png"
+                  alt="微信二维码"
+                  width={180}
+                  height={180}
+                  className="rounded-sm border border-sidebar-border"
+                />
+              </div>
+              <div className="text-[11px] text-sidebar-foreground/60">邮箱</div>
+              <a
+                href="mailto:xingchuan0105@163.com"
+                className="text-xs text-sidebar-foreground/80 break-all hover:underline"
+              >
+                xingchuan0105@163.com
+              </a>
+            </div>
+          )}
+
           <div
             className={cn(
               'flex',
