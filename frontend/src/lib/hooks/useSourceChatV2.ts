@@ -39,7 +39,7 @@ function convertToSourceChatMessage(msg: UIMessage, citationsMap: Map<string, Ch
     id: msg.id,
     type: msg.role === 'user' ? 'human' : 'ai',
     content: getMessageText(msg),
-    timestamp: msg.createdAt?.toISOString(),
+    timestamp: (msg as { createdAt?: Date }).createdAt?.toISOString(),
     citations: citationsMap.get(msg.id)
   }
 }
@@ -52,7 +52,6 @@ function convertToAIMessage(msg: SourceChatMessage): UIMessage {
     id: msg.id,
     role: msg.type === 'human' ? 'user' : 'assistant',
     parts: [{ type: 'text', text: msg.content }],
-    createdAt: msg.timestamp ? new Date(msg.timestamp) : undefined
   }
 }
 

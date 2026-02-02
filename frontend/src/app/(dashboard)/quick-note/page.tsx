@@ -231,7 +231,7 @@ export default function QuickNotePage() {
   }
 
   const handleKeyDown = (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) {
+    if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
       event.preventDefault()
       handleSend()
     }
@@ -629,3 +629,4 @@ export default function QuickNotePage() {
     </AppShell>
   )
 }
+

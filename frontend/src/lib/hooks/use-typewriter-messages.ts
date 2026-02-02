@@ -64,7 +64,6 @@ function findStreamingAssistant(messages: UIMessage[], baselineId?: string | nul
 function withTruncatedText(message: UIMessage, text: string): UIMessage {
   return {
     ...message,
-    content: text,
     parts: [{ type: 'text', text }],
   }
 }
@@ -225,3 +224,4 @@ export function useTypewriterMessages(
 
   return displayMessages
 }
+
