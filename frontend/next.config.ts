@@ -4,7 +4,6 @@ const backendUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3002';
 
 const nextConfig: NextConfig = {
   // Standalone output for Docker deployment
-  output: 'standalone',
   async rewrites() {
     return [
       {
@@ -16,3 +15,4 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+
